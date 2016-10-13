@@ -1,8 +1,13 @@
 """
 Handles input prompting and parsing.
 """
-import msvcrt as msv
 import os
+import platform
+
+if platform.system() == "Linux":
+    from getch import getch
+elif platform.system() == "Windows":
+    from msvcrt import getch
 
 class Key_assign:
     """
@@ -47,15 +52,15 @@ def prompt(options):
         print("{}: {}".format(key, option))
     
     # Read player's input.
-    inp = msv.getch()
+    inp = getch()
     print(inp)  # Echo the input.
     while inp not in valid_input:
         print("Invalid input.")
-        inp = msv.getch()
+        inp = getch()
         print(inp)
     
     return keys_options_dict[inp]
     
 
 if __name__ == "__main__":
-    print(msv.getch())
+    print(getch())
