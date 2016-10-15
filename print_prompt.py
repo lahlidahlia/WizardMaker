@@ -1,5 +1,7 @@
 """
 Handles input prompting and parsing.
+
+Contained here: class Key_assign, clear(), prompt(options),
 """
 import os
 import platform

@@ -16,3 +16,4 @@ class Room:
     def print_description(self):
         print("")
         print(self.description)
+        print("You see {} here".format(" ".join([npc.name for npc in self.npc_in_room])))

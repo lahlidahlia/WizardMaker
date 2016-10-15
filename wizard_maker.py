@@ -4,14 +4,29 @@ Anh Huynh
 This is the main file for the text adventure game.
 """
 
-import input_prompt as inp
+import print_prompt as pp
 import locations
+from player import Player
+import os
+import npc
+import girl
 import os
 
 if __name__ == "__main__":
-    inp.clear()
+    player = Player()
+
+    pp.clear()
     room1 = locations.Room("You see a road before your eyes. What do you do?")
     room1.print_description()
-    print(inp.prompt(["Follow path", "Die", "Prank someone"]))
+    print(pp.prompt(["Follow path", "Die", "Prank someone"]))
+
+    room2 = locations.Room("You followed the path.")
+    grill = girl.Girl()
+    room2.npc_in_room.append(grill)
+    room2.print_description()
+
+    grill.talk()
+
     
+
     #JUST AS A NOTE, ESCAPE IS 27.
