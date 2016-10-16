@@ -5,11 +5,19 @@ Contained here: class Key_assign, clear(), prompt(options),
 """
 import os
 import platform
+from enum import Enum
 
 if platform.system() == "Linux":
     from getch import getch
 elif platform.system() == "Windows":
     from msvcrt import getch
+
+
+class Response(Enum):
+    MOVE = 1
+    TALK = 2
+    LOOK = 3
+    MENU = 4
     
 def clear():
     os.system("cls")

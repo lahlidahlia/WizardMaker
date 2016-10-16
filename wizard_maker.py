@@ -17,13 +17,13 @@ if __name__ == "__main__":
 
     pp.clear()
     room1 = locations.Room("room1", "You see a road before your eyes. What do you do?")
-    room1.print_description()
-    #print(pp.prompt(["Follow path", "Die", "Prank someone"]))
-
     room2 = locations.Room("room2", "You followed the path.")
-    grill = girl.Girl()
-    room2.npc_in_room.append(grill)
-    room2.print_description()
-    room2.construct_options()
+
+    room1.connected_rooms.append(room2)
+    room2.connected_rooms.append(room1)
+    room2.npc_in_room.append(girl.Girl())
+
+    room1.player_enter_room()
+
 
     #JUST AS A NOTE, ESCAPE IS 27.
