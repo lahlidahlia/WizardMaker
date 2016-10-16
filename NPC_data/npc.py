@@ -34,3 +34,5 @@ class NPC(object):
     def print_message(self, text):
         print "{}: {}".format(self.name, text)
         
+    def print_description(self):
+        print(self.description)

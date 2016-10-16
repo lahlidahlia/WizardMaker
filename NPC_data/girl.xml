@@ -2,14 +2,12 @@
 
 <data>
     <description>This is a generic girl 1.</description>
-    <dialogue met="met"> <!-- Introduction -->
+    <dialogue met="False"> <!-- Introduction -->
         <message>Nice to meet you! I'm girl 1!</message>
-        <option>Nice to meet you!</option>
-        <option>I'm Tin</option>
-        <option>No</option>
+        <loop>You should go and meet everyone!</loop> 
     </dialogue>
-    <dialogue>
+    <dialogue met="True"> <!-- Already met -->
         <message>You're back already?</message>
+        <loop>Have you met everyone yet?</loop>
     </dialogue>
-    
 </data>
